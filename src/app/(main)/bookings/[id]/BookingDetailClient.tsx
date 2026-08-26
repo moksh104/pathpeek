@@ -124,7 +124,7 @@ export default function BookingDetailClient({ booking: initialBooking }: Booking
         </div>
 
         <Badge
-          className={`text-xs px-3 py-1 font-semibold uppercase tracking-wider ${
+          className={`text-xs px-3.5 py-1 font-bold uppercase tracking-wider ${
             isConfirmed
               ? 'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30'
               : 'bg-red-500/15 text-red-700 dark:text-red-300 border-red-500/30'
@@ -133,17 +133,19 @@ export default function BookingDetailClient({ booking: initialBooking }: Booking
           {isConfirmed ? 'Booking Confirmed (Mock)' : 'Booking Cancelled'}
         </Badge>
 
-        <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+        <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
           {isConfirmed ? 'Your Trip is All Set!' : 'Trip Has Been Cancelled'}
         </h1>
-        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+        <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
           Booking Reference:{' '}
-          <span className="font-mono font-bold text-gray-900 dark:text-white">{reference}</span>
+          <span className="font-mono font-bold text-violet-600 dark:text-violet-400 text-sm sm:text-base px-2.5 py-1 rounded-md bg-violet-50 dark:bg-violet-500/10 border border-violet-200 dark:border-violet-500/20">
+            {reference}
+          </span>
         </p>
       </div>
 
       {cancelError && (
-        <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-400 text-sm flex items-center gap-2">
+        <div className="mb-6 p-4 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-400 text-sm font-medium flex items-center gap-2">
           <AlertCircle className="w-4 h-4 flex-shrink-0" />
           <span>{cancelError}</span>
         </div>
@@ -163,23 +165,23 @@ export default function BookingDetailClient({ booking: initialBooking }: Booking
 
           <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col sm:flex-row sm:items-end justify-between gap-2">
             <div>
-              <Badge className="bg-white/80 dark:bg-black/60 text-gray-900 dark:text-white text-[10px] mb-1.5 border-0">
+              <Badge className="bg-white/80 dark:bg-black/60 text-gray-900 dark:text-white text-xs mb-1.5 border-0 font-semibold">
                 {booking.destination.mood}
               </Badge>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight drop-shadow-sm">
                 {booking.destination.name}
               </h2>
-              <p className="text-xs text-white/80 flex items-center gap-1 mt-0.5">
+              <p className="text-xs sm:text-sm text-white/90 font-medium flex items-center gap-1.5 mt-1">
                 <MapPin className="w-3.5 h-3.5 text-violet-400" />
                 {booking.destination.city}, {booking.destination.state}
               </p>
             </div>
 
             <div className="text-left sm:text-right">
-              <div className="text-[10px] uppercase tracking-wider text-white/60 font-medium">
+              <div className="text-xs uppercase tracking-wider text-white/80 font-bold">
                 Total Paid (Mock)
               </div>
-              <div className="text-2xl sm:text-3xl font-extrabold text-emerald-400">
+              <div className="text-3xl sm:text-4xl font-extrabold text-emerald-400 tracking-tight">
                 {formatINR(booking.totalPrice)}
               </div>
             </div>

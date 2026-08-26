@@ -103,26 +103,26 @@ export default async function AdminDashboardPage() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-900 dark:text-white">
               Platform Overview
             </h1>
-            <Badge className="bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-300 border-0 text-[10px]">
-              Live Metrics
+            <Badge className="bg-violet-100 dark:bg-violet-950 text-violet-700 dark:text-violet-300 border-0 text-xs px-2.5 py-0.5 font-semibold">
+              Live Database Metrics
             </Badge>
           </div>
-          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
+          <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
             Real-time platform statistics and booking telemetry.
           </p>
         </div>
 
         <div className="flex items-center gap-2">
           <Link href="/admin/destinations">
-            <Button size="sm" className="rounded-xl text-xs bg-violet-600 hover:bg-violet-700 text-white shadow-sm">
+            <Button size="sm" className="rounded-xl text-xs font-semibold bg-violet-600 hover:bg-violet-700 text-white shadow-sm">
               + New Destination
             </Button>
           </Link>
           <Link href="/admin/bookings">
-            <Button size="sm" variant="outline" className="rounded-xl text-xs">
+            <Button size="sm" variant="outline" className="rounded-xl text-xs font-semibold">
               Manage Bookings
             </Button>
           </Link>
@@ -138,19 +138,19 @@ export default async function AdminDashboardPage() {
               key={item.title}
               className="rounded-2xl border-gray-200/80 dark:border-white/[0.06] bg-white dark:bg-white/[0.02] shadow-sm hover:shadow-md transition-shadow"
             >
-              <CardContent className="p-5">
+              <CardContent className="p-5 sm:p-6">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  <span className="text-xs font-bold uppercase tracking-wider text-gray-500 dark:text-gray-400">
                     {item.title}
                   </span>
-                  <div className={`p-2 rounded-xl ${item.color}`}>
+                  <div className={`p-2.5 rounded-xl ${item.color}`}>
                     <Icon className="w-4 h-4" />
                   </div>
                 </div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-gray-900 dark:text-white">
+                <div className="text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight">
                   {item.value}
                 </div>
-                <p className="text-[11px] text-gray-400 dark:text-gray-500 mt-1">
+                <p className="text-xs text-gray-500 dark:text-gray-400 font-medium mt-1.5">
                   {item.description}
                 </p>
               </CardContent>

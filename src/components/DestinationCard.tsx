@@ -101,11 +101,11 @@ export default function DestinationCard({
         </div>
 
         {/* Title & Location in Image */}
-        <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h3 className="text-white text-lg font-bold line-clamp-1 group-hover:text-violet-200 transition-colors">
+        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5">
+          <h3 className="text-white text-lg sm:text-xl font-bold tracking-tight line-clamp-1 group-hover:text-violet-200 transition-colors drop-shadow-sm">
             {name}
           </h3>
-          <div className="flex items-center gap-1 text-white/80 text-xs mt-0.5">
+          <div className="flex items-center gap-1.5 text-white/90 text-xs sm:text-sm font-medium mt-1">
             <MapPin className="w-3.5 h-3.5 text-violet-400 flex-shrink-0" />
             <span className="truncate">
               {city}, {state}
@@ -116,25 +116,25 @@ export default function DestinationCard({
 
       {/* Card Body */}
       <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-        <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 line-clamp-2 leading-relaxed mb-4">
+        <p className="text-sm text-gray-600 dark:text-gray-300 line-clamp-2 leading-relaxed mb-4">
           {description}
         </p>
 
         <div className="space-y-4">
           {/* Price & Rating */}
-          <div className="flex items-center justify-between pt-2 border-t border-gray-100 dark:border-white/[0.04]">
+          <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/[0.06]">
             <div className="flex items-center gap-1.5">
               <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-              <span className="text-sm font-semibold text-gray-900 dark:text-white">
+              <span className="text-sm sm:text-base font-bold text-gray-900 dark:text-white">
                 {rating.toFixed(1)}
               </span>
             </div>
 
             <div className="text-right">
-              <div className="text-[10px] uppercase tracking-wider text-gray-400 dark:text-gray-500 font-medium">
+              <div className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-medium">
                 Starting from
               </div>
-              <div className="text-base font-bold text-gray-900 dark:text-white">
+              <div className="text-lg sm:text-xl font-extrabold text-gray-900 dark:text-white">
                 {formatINR(budget)}
               </div>
             </div>
@@ -142,9 +142,9 @@ export default function DestinationCard({
 
           {/* Primary CTA button linking directly to detail page */}
           <Link href={`/destinations/${id}`} className="block w-full">
-            <button className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-medium transition-all bg-gray-900 hover:bg-gray-800 text-white dark:bg-white/[0.06] dark:hover:bg-white/[0.12] dark:text-white border border-transparent dark:border-white/[0.08] group-hover:bg-violet-600 dark:group-hover:bg-violet-600 dark:group-hover:border-violet-500">
+            <button className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-sm font-semibold transition-all bg-gray-900 hover:bg-gray-800 text-white dark:bg-white/[0.06] dark:hover:bg-white/[0.12] dark:text-white border border-transparent dark:border-white/[0.08] group-hover:bg-violet-600 dark:group-hover:bg-violet-600 dark:group-hover:border-violet-500">
               <span>View Details</span>
-              <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </Link>
         </div>

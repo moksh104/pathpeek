@@ -170,18 +170,18 @@ export default function DestinationDetailClient({
             </div>
 
             <div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-[1.15] drop-shadow-sm">
                 {destination.name}
               </h1>
-              <div className="flex items-center gap-2 text-white/80 text-sm sm:text-base mt-2">
+              <div className="flex items-center gap-2 text-white/95 text-sm sm:text-base font-medium mt-2">
                 <MapPin className="w-4 h-4 text-violet-400" />
                 <span>
                   {destination.city}, {destination.state}
                 </span>
                 <span className="text-white/40">•</span>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1.5">
                   <Star className="w-4 h-4 text-amber-400 fill-amber-400" />
-                  <span className="font-semibold text-white">
+                  <span className="font-bold text-white">
                     {destination.rating.toFixed(1)} / 5.0
                   </span>
                 </div>
@@ -191,7 +191,7 @@ export default function DestinationDetailClient({
             {/* Quick Action bar */}
             <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
               <div>
-                <div className="text-[11px] uppercase tracking-wider text-white/60 font-medium">
+                <div className="text-xs uppercase tracking-wider text-white/70 font-semibold">
                   Estimated Starting Budget
                 </div>
                 <div className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -201,7 +201,7 @@ export default function DestinationDetailClient({
 
               <div className="flex items-center gap-3">
                 <Link href={`/trip-planner?destinationId=${destination.id}`}>
-                  <Button className="h-11 px-6 rounded-xl font-medium bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-lg shadow-violet-500/30">
+                  <Button className="h-12 px-7 rounded-xl font-bold text-sm sm:text-base bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-xl shadow-violet-500/30">
                     <Calendar className="w-4 h-4 mr-2" />
                     Plan My Trip
                   </Button>

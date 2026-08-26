@@ -209,37 +209,37 @@ export default function MyTripsClient({ bookings }: { bookings: MyTripBooking[] 
                     </div>
 
                     {/* Meta Row */}
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs pt-1">
-                      <div className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400">
-                        <Calendar className="w-3.5 h-3.5 text-violet-500" />
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs sm:text-sm pt-1">
+                      <div className="flex items-center gap-1.5 text-gray-700 dark:text-gray-300 font-medium">
+                        <Calendar className="w-4 h-4 text-violet-500 flex-shrink-0" />
                         <span>
                           {formatTripDate(b.checkIn)} – {formatTripDate(b.checkOut)} ({nights}N)
                         </span>
                       </div>
-                      <div className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400">
-                        <Users className="w-3.5 h-3.5 text-violet-500" />
+                      <div className="flex items-center gap-1.5 text-gray-700 dark:text-gray-300 font-medium">
+                        <Users className="w-4 h-4 text-violet-500 flex-shrink-0" />
                         <span>{b.guests} Guests</span>
                       </div>
-                      <div className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400">
-                        <Building2 className="w-3.5 h-3.5 text-violet-500" />
+                      <div className="flex items-center gap-1.5 text-gray-700 dark:text-gray-300 font-medium">
+                        <Building2 className="w-4 h-4 text-violet-500 flex-shrink-0" />
                         <span className="truncate">
                           {b.hotel ? b.hotel.name : 'No hotel (self-stay)'}
                         </span>
                       </div>
-                      <div className="flex items-center gap-1.5 text-gray-600 dark:text-gray-400">
-                        <Ticket className="w-3.5 h-3.5 text-violet-500" />
+                      <div className="flex items-center gap-1.5 text-gray-700 dark:text-gray-300 font-medium">
+                        <Ticket className="w-4 h-4 text-violet-500 flex-shrink-0" />
                         <span>{b.activities.length} Experiences</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Price & Action Row */}
-                  <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-white/[0.04]">
+                  <div className="flex items-center justify-between pt-3.5 border-t border-gray-100 dark:border-white/[0.06]">
                     <div>
-                      <span className="text-[10px] uppercase tracking-wider text-gray-400 font-medium">
+                      <span className="text-xs uppercase tracking-wider text-gray-500 dark:text-gray-400 font-bold">
                         Total Amount
                       </span>
-                      <div className="text-xl font-bold text-gray-900 dark:text-white">
+                      <div className="text-xl sm:text-2xl font-extrabold text-gray-900 dark:text-white">
                         {formatINR(b.totalPrice)}
                       </div>
                     </div>
@@ -247,10 +247,10 @@ export default function MyTripsClient({ bookings }: { bookings: MyTripBooking[] 
                     <Link href={`/bookings/${b.id}`}>
                       <Button
                         variant="outline"
-                        className="rounded-xl text-xs h-9 px-4 hover:bg-violet-50 dark:hover:bg-violet-950/20 hover:text-violet-600 dark:hover:text-violet-400 border-gray-200 dark:border-white/[0.08]"
+                        className="rounded-xl text-xs sm:text-sm font-semibold h-10 px-4 hover:bg-violet-50 dark:hover:bg-violet-950/20 hover:text-violet-600 dark:hover:text-violet-400 border-gray-200 dark:border-white/[0.08]"
                       >
                         <span>View Trip Details</span>
-                        <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                        <ArrowRight className="w-4 h-4 ml-1.5" />
                       </Button>
                     </Link>
                   </div>

@@ -885,60 +885,60 @@ export default function TripPlannerClient({
         {/* Right Column (4 cols): Sticky Live Cost Summary */}
         <div className="lg:col-span-4 sticky top-24 space-y-4">
           <Card className="rounded-2xl border-gray-200/80 dark:border-white/[0.08] bg-white/95 dark:bg-[#0f0f14]/95 backdrop-blur-xl shadow-lg">
-            <CardHeader className="pb-3 border-b border-gray-100 dark:border-white/[0.04]">
-              <CardTitle className="text-base font-bold text-gray-900 dark:text-white flex items-center justify-between">
+            <CardHeader className="pb-3 border-b border-gray-100 dark:border-white/[0.06]">
+              <CardTitle className="text-base sm:text-lg font-bold text-gray-900 dark:text-white flex items-center justify-between">
                 <span>Trip Cost Summary</span>
-                <Badge variant="outline" className="text-[10px]">
+                <Badge variant="outline" className="text-xs font-semibold">
                   Live Estimate
                 </Badge>
               </CardTitle>
             </CardHeader>
 
-            <CardContent className="p-5 space-y-4 text-xs">
+            <CardContent className="p-5 space-y-4 text-sm">
               {/* Destination Tag */}
               {selectedDestination ? (
-                <div className="pb-3 border-b border-gray-100 dark:border-white/[0.04]">
-                  <span className="text-gray-400 block text-[11px]">Destination</span>
-                  <span className="font-bold text-sm text-gray-900 dark:text-white">
+                <div className="pb-3 border-b border-gray-100 dark:border-white/[0.06]">
+                  <span className="text-gray-500 dark:text-gray-400 block text-xs font-medium">Destination</span>
+                  <span className="font-extrabold text-base text-gray-900 dark:text-white">
                     {selectedDestination.name}
                   </span>
-                  <span className="text-gray-500 text-[11px] block mt-0.5">
+                  <span className="text-gray-600 dark:text-gray-300 text-xs block mt-0.5 font-medium">
                     {checkIn} → {checkOut} ({nights}N, {guests} guests)
                   </span>
                 </div>
               ) : (
-                <div className="text-gray-400 text-xs italic">No destination selected yet.</div>
+                <div className="text-gray-400 text-sm italic">No destination selected yet.</div>
               )}
 
               {/* Breakdown */}
-              <div className="space-y-2.5">
-                <div className="flex justify-between items-center text-gray-600 dark:text-gray-300">
+              <div className="space-y-3">
+                <div className="flex justify-between items-center text-gray-700 dark:text-gray-300 text-sm">
                   <span>Hotel Stay ({nights} nights)</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">
+                  <span className="font-bold text-gray-900 dark:text-white text-base">
                     {formatINR(pricing.hotelCost)}
                   </span>
                 </div>
 
-                <div className="flex justify-between items-center text-gray-600 dark:text-gray-300">
+                <div className="flex justify-between items-center text-gray-700 dark:text-gray-300 text-sm">
                   <span>Activities ({selectedActivitiesList.length})</span>
-                  <span className="font-semibold text-gray-900 dark:text-white">
+                  <span className="font-bold text-gray-900 dark:text-white text-base">
                     {formatINR(pricing.activityCost)}
                   </span>
                 </div>
 
-                <div className="flex justify-between items-center text-gray-500 text-[11px]">
+                <div className="flex justify-between items-center text-gray-500 text-xs">
                   <span>PathPeek Service Fee</span>
-                  <span className="text-emerald-600 dark:text-emerald-400 font-medium">₹0 (Free Demo)</span>
+                  <span className="text-emerald-600 dark:text-emerald-400 font-semibold">₹0 (Free Demo)</span>
                 </div>
               </div>
 
               {/* Total */}
-              <div className="pt-3 border-t border-gray-100 dark:border-white/[0.06] flex items-baseline justify-between">
+              <div className="pt-4 border-t border-gray-200/80 dark:border-white/[0.08] flex items-baseline justify-between">
                 <div>
-                  <div className="text-[10px] uppercase tracking-wider font-semibold text-gray-400">
+                  <div className="text-xs uppercase tracking-wider font-bold text-gray-500 dark:text-gray-400">
                     Total Estimated Cost
                   </div>
-                  <div className="text-2xl font-extrabold text-gray-900 dark:text-white mt-0.5">
+                  <div className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mt-1">
                     {formatINR(pricing.totalPrice)}
                   </div>
                 </div>
@@ -947,16 +947,16 @@ export default function TripPlannerClient({
               {currentStep < 5 && (
                 <Button
                   onClick={handleNextStep}
-                  className="w-full h-10 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-medium text-xs shadow-md shadow-violet-500/20"
+                  className="w-full h-11 rounded-xl bg-violet-600 hover:bg-violet-700 text-white font-semibold text-sm shadow-md shadow-violet-500/20"
                 >
-                  Proceed to {steps[currentStep]?.name || 'Next'}
-                  <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                  Continue to Next Step
+                  <ArrowRight className="w-4 h-4 ml-1.5" />
                 </Button>
               )}
             </CardContent>
           </Card>
 
-          <p className="text-[11px] text-center text-gray-400 dark:text-gray-500">
+          <p className="text-xs text-center text-gray-500 dark:text-gray-400 font-medium">
             🔒 Mock Booking Portal for DEVSTORM-2026. No payment required.
           </p>
         </div>

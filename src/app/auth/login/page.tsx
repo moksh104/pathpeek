@@ -92,10 +92,10 @@ export default function LoginPage() {
         {/* Login Card */}
         <Card className="border-gray-200/80 dark:border-white/[0.08] bg-white/90 dark:bg-[#0f0f14]/90 backdrop-blur-xl shadow-xl dark:shadow-2xl">
           <CardHeader className="space-y-1 pb-4">
-            <CardTitle className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+            <CardTitle className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               Welcome back
             </CardTitle>
-            <CardDescription className="text-sm text-gray-500 dark:text-gray-400">
+            <CardDescription className="text-sm text-gray-600 dark:text-gray-300 font-normal">
               Enter your credentials to access your account
             </CardDescription>
           </CardHeader>
@@ -103,14 +103,14 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit}>
             <CardContent className="space-y-4">
               {error && (
-                <div className="flex items-center gap-2 p-3 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-400 text-sm animate-fade-in">
+                <div className="flex items-center gap-2 p-3.5 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-400 text-sm font-medium animate-fade-in">
                   <AlertCircle className="w-4 h-4 flex-shrink-0" />
                   <span>{error}</span>
                 </div>
               )}
 
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                <Label htmlFor="email" className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                   Email Address
                 </Label>
                 <div className="relative">
@@ -123,14 +123,14 @@ export default function LoginPage() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     disabled={isLoading}
-                    className="pl-10 h-11 rounded-xl bg-gray-50/50 dark:bg-white/[0.03] border-gray-200 dark:border-white/[0.08] focus:border-violet-500 dark:focus:border-violet-400 transition-all"
+                    className="pl-10 h-11 rounded-xl text-sm bg-gray-50/50 dark:bg-white/[0.03] border-gray-200 dark:border-white/[0.08] focus:border-violet-500 dark:focus:border-violet-400 transition-all"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
-                  <Label htmlFor="password" className="text-xs font-medium text-gray-700 dark:text-gray-300">
+                  <Label htmlFor="password" className="text-xs font-bold uppercase tracking-wider text-gray-700 dark:text-gray-300">
                     Password
                   </Label>
                 </div>
@@ -144,7 +144,7 @@ export default function LoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     disabled={isLoading}
-                    className="pl-10 h-11 rounded-xl bg-gray-50/50 dark:bg-white/[0.03] border-gray-200 dark:border-white/[0.08] focus:border-violet-500 dark:focus:border-violet-400 transition-all"
+                    className="pl-10 h-11 rounded-xl text-sm bg-gray-50/50 dark:bg-white/[0.03] border-gray-200 dark:border-white/[0.08] focus:border-violet-500 dark:focus:border-violet-400 transition-all"
                   />
                 </div>
               </div>
@@ -152,7 +152,7 @@ export default function LoginPage() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full h-11 rounded-xl font-medium bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-lg shadow-violet-500/25 transition-all duration-300"
+                className="w-full h-11 rounded-xl font-bold text-sm bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-500 hover:to-purple-500 text-white shadow-lg shadow-violet-500/25 transition-all duration-300"
               >
                 {isLoading ? (
                   <>

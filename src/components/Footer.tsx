@@ -21,19 +21,19 @@ export default function Footer() {
                   className="w-6 h-6 object-contain"
                 />
               </div>
-              <span className="text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+              <span className="text-xl font-extrabold tracking-tight text-gray-900 dark:text-white">
                 PathPeek
               </span>
             </Link>
-            <p className="text-sm text-gray-500 dark:text-gray-400 max-w-sm leading-relaxed">
+            <p className="text-sm text-gray-600 dark:text-gray-300 max-w-sm leading-relaxed font-normal">
               Smart Tourism & Travel Booking Portal. Discover curated Indian destinations matching your mood, vibe, and budget.
             </p>
-            <div className="flex items-center gap-4 text-xs text-gray-400 dark:text-gray-500">
-              <span className="flex items-center gap-1">
+            <div className="flex items-center gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
+              <span className="flex items-center gap-1.5">
                 <Sparkles className="w-3.5 h-3.5 text-violet-500" />
                 Curated Experiences
               </span>
-              <span className="flex items-center gap-1">
+              <span className="flex items-center gap-1.5">
                 <Shield className="w-3.5 h-3.5 text-emerald-500" />
                 Verified Stays
               </span>
@@ -42,14 +42,14 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-xs uppercase tracking-wider font-semibold text-gray-900 dark:text-white mb-4">
+            <h4 className="text-xs uppercase tracking-wider font-bold text-gray-900 dark:text-white mb-4">
               Explore
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-sm font-medium">
               <li>
                 <Link
                   href="/"
-                  className="text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                 >
                   Home Discovery
                 </Link>
@@ -57,7 +57,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/destinations"
-                  className="text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                 >
                   All Destinations
                 </Link>
@@ -65,7 +65,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/trip-planner"
-                  className="text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                 >
                   Trip Planner
                 </Link>
@@ -73,7 +73,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/my-trips"
-                  className="text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                 >
                   My Trips
                 </Link>
@@ -83,14 +83,14 @@ export default function Footer() {
 
           {/* Account & Hackathon */}
           <div>
-            <h4 className="text-xs uppercase tracking-wider font-semibold text-gray-900 dark:text-white mb-4">
+            <h4 className="text-xs uppercase tracking-wider font-bold text-gray-900 dark:text-white mb-4">
               Account & Portal
             </h4>
-            <ul className="space-y-2.5 text-sm">
+            <ul className="space-y-2.5 text-sm font-medium">
               <li>
                 <Link
                   href="/auth/login"
-                  className="text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                 >
                   Sign In
                 </Link>
@@ -98,7 +98,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/auth/register"
-                  className="text-gray-500 dark:text-gray-400 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
+                  className="text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 transition-colors"
                 >
                   Create Account
                 </Link>
@@ -106,7 +106,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/admin"
-                  className="text-amber-600/80 dark:text-amber-400/80 hover:text-amber-600 dark:hover:text-amber-400 transition-colors"
+                  className="text-amber-600 dark:text-amber-400 hover:text-amber-500 transition-colors font-semibold"
                 >
                   Admin Portal
                 </Link>
@@ -116,7 +116,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-100 dark:border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500 dark:text-gray-400">
+        <div className="pt-8 border-t border-gray-100 dark:border-white/[0.04] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-medium text-gray-500 dark:text-gray-400">
           <p>© {currentYear} PathPeek — DEVSTORM-2026 Hackathon</p>
           <p className="flex items-center gap-1">
             Built for Smart Tourism with <Heart className="w-3 h-3 text-red-500 fill-red-500" />
