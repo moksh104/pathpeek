@@ -1,5 +1,6 @@
 import { db } from '@/lib/db'
 import DestinationsClient from './DestinationsClient'
+import { travelPlaces } from '@/data/places'
 
 export const metadata = {
   title: 'All Destinations — PathPeek Travel Portal',
@@ -19,6 +20,14 @@ export default async function DestinationsPage() {
     })
   } catch (error) {
     console.error('Failed to load destinations from database:', error)
+  }
+
+  // Fallback to static seed data if database returns empty
+  if (!destinations || destinations.length === 0) {
+    destinations = travelPlaces.map((p) => ({
+      ...p,
+      recommendationScore: p.recommendationScore ?? 85,
+    }))
   }
 
   return <DestinationsClient initialDestinations={destinations} />

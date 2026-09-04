@@ -6,6 +6,9 @@ if (!process.env.DATABASE_URL) {
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  outputFileTracingIncludes: {
+    '/**': ['./prisma/dev.db', './prisma/schema.prisma'],
+  },
   devIndicators: false,
   /* config options here */
   typescript: {
