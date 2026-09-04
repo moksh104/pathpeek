@@ -6,13 +6,20 @@ export const metadata = {
   description: 'Explore curated Indian destinations by mood, budget, and location.',
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function DestinationsPage() {
-  const destinations = await db.destination.findMany({
-    orderBy: [
-      { recommendationScore: 'desc' },
-      { rating: 'desc' },
-    ],
-  })
+  let destinations: any[] = []
+  try {
+    destinations = await db.destination.findMany({
+      orderBy: [
+        { recommendationScore: 'desc' },
+        { rating: 'desc' },
+      ],
+    })
+  } catch (error) {
+    console.error('Failed to load destinations from database:', error)
+  }
 
   return <DestinationsClient initialDestinations={destinations} />
 }

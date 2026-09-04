@@ -52,6 +52,7 @@ server.log
 
 # SQLite databases
 *.db
+!prisma/dev.db
 *.db-journal
 *.db-shm
 *.db-wal
