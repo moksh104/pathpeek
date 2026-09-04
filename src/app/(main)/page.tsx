@@ -63,7 +63,6 @@ export default function Home() {
   const [isInitialLoading, setIsInitialLoading] = useState(true)
   const [loadedImages, setLoadedImages] = useState<Set<string>>(new Set())
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set())
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [apiPlaces, setApiPlaces] = useState<any[]>([])
   const [apiLoading, setApiLoading] = useState(false)
   const [apiError, setApiError] = useState<string | null>(null)

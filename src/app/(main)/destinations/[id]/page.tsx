@@ -12,7 +12,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params
-  let destination = null
+  let destination: { name: string; city: string; state: string; description: string } | null = null
   try {
     destination = await db.destination.findUnique({
       where: { id },
